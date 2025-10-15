@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Cédula RD - Arowarlin Suarez Diaz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">JCE</div>
+                    <div class="title-section">
+                        <h1>Validador de Cédula RD</h1>
+                        <p class="subtitle">Validación basada en el algoritmo del Módulo 10 (Luhn)</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#ejemplos">Ejemplos</a>
+                    <a href="#notas">Notas</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Validator Card -->
+            <div class="validator-card">
+                <h2>Verificador de Cédula</h2>
+                <p class="description">
+                    Introduzca el número de cédula <strong>(con o sin guiones)</strong> para verificar su validez estructural.
+                </p>
+
+                <div class="input-section">
+                    <input 
+                        type="text" 
+                        id="cedulaInput" 
+                        placeholder="Ej: 40212345678"
+                        maxlength="13"
+                    >
+                    <p class="input-hint">Formato: 11 dígitos (Ej: 40212345678 o 402-1234567-8)</p>
+                </div>
+
+                <div class="button-group">
+                    <button id="validarBtn" class="btn btn-primary">Validar</button>
+                    <button id="limpiarBtn" class="btn btn-secondary">Limpiar</button>
+                </div>
+
+                <!-- Resultado -->
+                <div id="resultado" class="resultado hidden"></div>
+            </div>
+
+            <!-- Ejemplos -->
+            <div id="ejemplos" class="info-card ejemplos-card">
+                <h3>📋 Ejemplos / Pruebas</h3>
+                <ul>
+                    <li><span class="check">✓</span> <strong>79927398713</strong> — ejemplo clásico Luhn (válido)</li>
+                    <li><span class="check">✓</span> <strong>001-2345678-2</strong> — formato RD (válido si el dígito verificador coincide)</li>
+                    <li><span class="info">ℹ</span> Prueba con diferentes números para validar la estructura</li>
+                </ul>
+            </div>
+
+            <!-- Notas -->
+            <div id="notas" class="info-card notas-card">
+                <h3>📌 Notas importantes</h3>
+                <ul>
+                    <li>Se valida la estructura (11 dígitos) y el dígito verificador con algoritmo Módulo 10 (Luhn).</li>
+                    <li>Este validador no consulta la base de datos de la JCE; solo comprueba la regla estructural.</li>
+                    <li>La estética se inspira en la paleta institucional (azul, morado y colores modernos).</li>
+                    <li>El formato aceptado es de 11 dígitos consecutivos, con o sin guiones.</li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-info">
+                <div class="author-card">
+                    <p class="author-title">👨‍💻 Desarrollado por:</p>
+                    <p class="author-name">Arowarlin Suarez Diaz</p>
+                    <p class="university">Universidad Autónoma de Santo Domingo (UASD)</p>
+                    <p class="professor"><span class="label">Profesor:</span> Radhamés Silverio</p>
+                </div>
+                <p>Validación estructural de cédulas dominicanas</p>
+                <p class="small">Algoritmo Módulo 10 (Luhn) • República Dominicana</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="validator.js"></script>
+</body>
+</html>
